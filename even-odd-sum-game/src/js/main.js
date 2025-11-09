@@ -26,13 +26,14 @@ const updateGame = () => {
     return sumIsEven;
 };
 
-const checkAnswer = (userAnswer) => {
-    const correctAnswer = updateGame();
-    if (userAnswer === correctAnswer) {
-        alert('Correct!');
-    } else {
-        alert('Wrong! Try again.');
-    }
+const resultElement = document.getElementById('result');
+if (userAnswer === correctAnswer) {
+    resultElement.textContent = 'Correct!';
+    resultElement.style.color = 'green';
+} else {
+    resultElement.textContent = 'Wrong! Try again.';
+    resultElement.style.color = 'red';
+}
 };
 
 document.addEventListener('DOMContentLoaded', () => {
