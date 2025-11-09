@@ -1,0 +1,24 @@
+{
+  "name": "even-odd-sum-game",
+  "version": "1.0.0",
+  "description": "A simple game where players guess if the sum of five random numbers is even or odd.",
+  "main": "src/js/main.js",
+  "scripts": {
+    "start": "live-server src",
+    "test": "jest"
+  },
+  "keywords": [
+    "game",
+    "even",
+    "odd",
+    "random numbers"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.0"
+  }
+}
