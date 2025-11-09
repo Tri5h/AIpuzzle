@@ -23,15 +23,21 @@ const updateGame = () => {
     
     document.getElementById('number-display').textContent = `Numbers: ${numbers.join(', ')} | Sum: ${sum}`;
     
-    return sumIsEven;
+    return { sumIsEven, sum };
 };
 
 const checkAnswer = (userAnswer) => {
-    const correctAnswer = updateGame();
-    if (userAnswer === correctAnswer) {
-        alert('Correct!');
+    const { sumIsEven, sum } = updateGame();
+    const userChoice = userAnswer ? 'even' : 'odd';
+    const correctChoice = sumIsEven ? 'even' : 'odd';
+    
+    const resultElement = document.getElementById('result');
+    if (userAnswer === sumIsEven) {
+        resultElement.textContent = `Correct! You chose ${userChoice} and the sum (${sum}) is indeed ${correctChoice}!`;
+        resultElement.style.color = 'green';
     } else {
-        alert('Wrong! Try again.');
+        resultElement.textContent = `Wrong! You chose ${userChoice} but the sum (${sum}) is ${correctChoice}. Try again!`;
+        resultElement.style.color = 'red';
     }
 };
 
