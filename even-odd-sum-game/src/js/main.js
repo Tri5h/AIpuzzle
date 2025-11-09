@@ -1,9 +1,9 @@
-// This file contains the JavaScript logic for the game. It generates five random numbers, calculates their sum, and determines if the sum is even or odd. It also handles the button click events to check the player's answers.
+// This file contains the JavaScript logic for the game. It generates five random numbers, calculates their sum, and determines if the sum is even or odd. It also handles the button click events to check user answers.
 
 const generateRandomNumbers = () => {
     const numbers = [];
     for (let i = 0; i < 5; i++) {
-        numbers.push(Math.floor(Math.random() * 100)); // Generate random numbers between 0 and 99
+        numbers.push(Math.floor(Math.random() * 9) + 1); // Generate random numbers between 1 and 9
     }
     return numbers;
 };
@@ -43,4 +43,4 @@ document.addEventListener('DOMContentLoaded', () => {
     oddButton.addEventListener('click', () => checkAnswer(false));
 
     updateGame(); // Initialize the game on load
-});
+};
