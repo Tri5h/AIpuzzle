@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Glean Agent Embed</title>
+
+    <!-- 1) Add the Glean JS library -->
+    <script defer src="https://booking.glean.com/embedded-search-latest.min.js"></script>
+
+    <style>
+      html, body { margin: 0; padding: 0; height: 100%; }
+      /* 2) Create an entry point in your site */
+      #glean-app {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 700px; /* Adjust as needed for your Google Sites section */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="glean-app"></div>
+
+    <!-- 3) Display the agent -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        GleanWebSDK.renderChat(
+          document.getElementById('glean-app'),
+          { agentId: "c47923315dcc4e56ac2b10d1af885ad1" }
+        );
+      });
+    </script>
+  </body>
+</html>
